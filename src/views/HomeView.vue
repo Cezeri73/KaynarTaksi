@@ -21,7 +21,7 @@ const getLocation = () => {
   )
 }
 const sendWhatsApp = () => {
-  const phone = '905364973773'
+  const phone = '905446573773'
   const text = `Merhaba, taksi çağırmak istiyorum.%0AAdresim/Konumum: ${pickup.value}%0AGideceğim yer: ${destination.value}`
   window.open(`https://wa.me/${phone}?text=${text}`, '_blank')
 }
@@ -29,78 +29,94 @@ const sendWhatsApp = () => {
 
 <template>
   <div class="home-bg">
-    <section class="hero">
-      <div class="hero-flex">
-        <img class="hero-taxi-img left" src="@/assets/taksi.jpg" alt="Kaynar Taksi, Taksi Kaynar, Şırnak Kaynar Taksi, Cizre Taksi, Silopi Taksi, Beytüşşebap Taksi, İdil Taksi, Uludere Taksi, Güçlükonak Taksi, Taksi Şırnak, Şırnak araba, araba" />
-        <div class="hero-content">
-          <h1>Kaynar Taksi</h1>
-          <h2>Şırnak Merkez'de 7/24 Güvenilir Taksi Hizmeti</h2>
-          <p>
-            Kaynar Taksi olarak, Şırnak ve ilçeleri (Cizre, Silopi, Beytüşşebap, İdil, Uludere, Güçlükonak) ile çevresinde güvenli, konforlu ve hızlı ulaşım sunuyoruz. Şırnak'ta taksi veya araba arıyorsanız, 0544 657 37 73, 544 657 37 73, 05446573773, 5446573773, +905446573773, 905446573773, 0 544 657 37 73, 0 5446573773 numaralı hattımızdan 7 gün 24 saat bize ulaşabilirsiniz. Taksi Kaynar, Şırnak Kaynar Taksi, Cizre Taksi, Silopi Taksi, Beytüşşebap Taksi, İdil Taksi, Uludere Taksi, Güçlükonak Taksi, Taksi Şırnak, Şırnak araba gibi aramalarınızda da en hızlı hizmeti sunuyoruz.
-          </p>
-          <a class="cta-btn" href="tel:05446573773">Hemen Taksi Çağır</a>
+    <div class="container">
+      <section class="whatsapp-form-section">
+        <h3>Taksi Çağırmak Çok Kolay!</h3>
+        <p class="form-desc">Adresinizi veya konumunuzu girin, isterseniz gideceğiniz yeri de ekleyin. WhatsApp'tan bize ulaşın, hemen taksi yönlendirelim!</p>
+        <form class="whatsapp-form" @submit.prevent="sendWhatsApp">
+          <div class="input-group">
+            <input v-model="pickup" type="text" placeholder="Adresiniz veya Konumunuz" required />
+            <button type="button" class="location-btn" @click="getLocation">Konumumu Kullan</button>
+          </div>
+          <input v-model="destination" type="text" placeholder="Gideceğiniz Yer (isteğe bağlı)" />
+          <button type="submit">WhatsApp'tan Taksi Çağır</button>
+        </form>
+        <p v-if="locationError" class="location-error">Konum alınamadı: {{ locationError }}</p>
+      </section>
+
+      <section class="hero">
+        <div class="hero-flex">
+          <div class="hero-content">
+            <h1>Kaynar Taksi</h1>
+            <h2>Şırnak Merkez'de 7/24 Güvenilir Taksi Hizmeti</h2>
+            <p>
+              Kaynar Taksi olarak, Şırnak ve ilçeleri (Cizre, Silopi, Beytüşşebap, İdil, Uludere, Güçlükonak) ile çevresinde güvenli, konforlu ve hızlı ulaşım sunuyoruz. Şırnak'ta taksi veya araba arıyorsanız, 0544 657 37 73 numaralı hattımızdan 7 gün 24 saat bize ulaşabilirsiniz.
+            </p>
+            <a class="cta-btn" href="tel:05446573773">Hemen Taksi Çağır</a>
+            <img class="hero-taxi-img single" src="@/assets/taksi.jpg" alt="Kaynar Taksi, Taksi Kaynar, Şırnak Kaynar Taksi" />
+          </div>
         </div>
-        <img class="hero-taxi-img right" src="@/assets/taksi.jpg" alt="Kaynar Taksi, Taksi Kaynar, Şırnak Kaynar Taksi, Cizre Taksi, Silopi Taksi, Beytüşşebap Taksi, İdil Taksi, Uludere Taksi, Güçlükonak Taksi, Taksi Şırnak, Şırnak araba, araba" />
-      </div>
-    </section>
+      </section>
 
-    <section class="whatsapp-form-section">
-      <h3>Taksi Çağırmak Çok Kolay!</h3>
-      <p class="form-desc">Adresinizi veya konumunuzu girin, isterseniz gideceğiniz yeri de ekleyin. WhatsApp'tan bize ulaşın, hemen taksi yönlendirelim!</p>
-      <form class="whatsapp-form" @submit.prevent="sendWhatsApp">
-        <div class="input-group">
-          <input v-model="pickup" type="text" placeholder="Adresiniz veya Konumunuz" required />
-          <button type="button" class="location-btn" @click="getLocation">Konumumu Kullan</button>
+      <section class="features">
+        <div class="feature">
+          <h3>Konfor ve Güvenlik</h3>
+          <p>Bakımlı ve temiz araçlarımızla, deneyimli şoförlerimizle güvenli yolculuk.</p>
         </div>
-        <input v-model="destination" type="text" placeholder="Gideceğiniz Yer (isteğe bağlı)" />
-        <button type="submit">WhatsApp'tan Taksi Çağır</button>
-      </form>
-      <p v-if="locationError" class="location-error">Konum alınamadı: {{ locationError }}</p>
-    </section>
+        <div class="feature">
+          <h3>7/24 Hizmet</h3>
+          <p>Günün her saati, haftanın her günü ulaşım desteği.</p>
+        </div>
+        <div class="feature">
+          <h3>Hızlı Ulaşım</h3>
+          <p>En kısa sürede bulunduğunuz noktaya ulaşırız.</p>
+        </div>
+      </section>
 
-    <section class="features">
-      <div class="feature">
-        <h3>Konfor ve Güvenlik</h3>
-        <p>Bakımlı ve temiz araçlarımızla, deneyimli şoförlerimizle güvenli yolculuk.</p>
-      </div>
-      <div class="feature">
-        <h3>7/24 Hizmet</h3>
-        <p>Günün her saati, haftanın her günü ulaşım desteği.</p>
-      </div>
-      <div class="feature">
-        <h3>Hızlı Ulaşım</h3>
-        <p>En kısa sürede bulunduğunuz noktaya ulaşırız.</p>
-      </div>
-    </section>
-
-    <section class="contact-short">
-      <h3>Bize Ulaşın</h3>
-      <p><strong>Telefon:</strong> <a href="tel:05446573773">0544 657 37 73</a></p>
-      <p><strong>Hizmet Bölgeleri:</strong> Şırnak Merkez ve çevresi</p>
-    </section>
+      <section class="contact-short">
+        <h3>Bize Ulaşın</h3>
+        <p><strong>Telefon:</strong> <a href="tel:05446573773">0544 657 37 73</a></p>
+        <p><strong>Hizmet Bölgeleri:</strong> Şırnak Merkez ve çevresi</p>
+      </section>
+    </div>
   </div>
 </template>
 
 <style scoped>
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 .home-bg {
   background: #fff;
   min-height: 100vh;
+  width: 100vw;
   padding-bottom: 2rem;
+  overflow-x: hidden;
+}
+.container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 1.5rem;
 }
 .hero {
   background: linear-gradient(135deg, #fff 60%, #ffe066 100%);
-  padding: 3rem 0.5rem 2rem 0.5rem;
+  padding: 2.5rem 0;
   text-align: center;
   border-radius: 0;
-  margin: 0 0 2rem 0;
-  width: 100vw;
+  margin-bottom: 2rem;
   box-shadow: 0 2px 12px #0001;
+  width: 100%;
 }
 .hero-flex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2.5rem;
+  flex-wrap: wrap;
 }
 .hero-content h1 {
   font-size: 2.7rem;
@@ -138,17 +154,19 @@ const sendWhatsApp = () => {
   border: 2px solid #facc15;
 }
 .hero-taxi-img {
-  max-width: 340px;
-  width: 40vw;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
   border-radius: 1.2rem;
   box-shadow: 0 4px 24px #0002;
   object-fit: cover;
+  display: block;
+  margin: 1.5rem auto 0 auto;
 }
-.hero-taxi-img.left {
-  margin-left: 0;
-}
-.hero-taxi-img.right {
-  margin-right: 0;
+.hero-taxi-img.single {
+  max-width: 400px;
+  width: 100%;
+  margin: 1.5rem auto 0 auto;
 }
 .features {
   display: flex;
@@ -156,7 +174,6 @@ const sendWhatsApp = () => {
   justify-content: center;
   gap: 2rem;
   margin: 2rem 0;
-  width: 100vw;
 }
 .feature {
   background: #fff;
@@ -179,7 +196,7 @@ const sendWhatsApp = () => {
   font-size: 1rem;
 }
 .contact-short {
-  background: #fff;
+  background: #facc15;
   border-radius: 1rem;
   margin: 2rem auto;
   padding: 1.5rem;
@@ -187,9 +204,11 @@ const sendWhatsApp = () => {
   text-align: center;
   box-shadow: 0 2px 8px #0001;
 }
-.contact-short h3 {
-  color: #1e293b;
-  margin-bottom: 0.5rem;
+.contact-short h3,
+.contact-short p,
+.contact-short a {
+  color: #222 !important;
+  font-weight: bold;
 }
 .whatsapp-form-section {
   background: #fff;
@@ -265,7 +284,6 @@ const sendWhatsApp = () => {
 }
 @media (max-width: 1200px) {
   .hero-taxi-img {
-    width: 28vw;
     max-width: 200px;
   }
 }
@@ -276,44 +294,16 @@ const sendWhatsApp = () => {
     align-items: center;
   }
   .hero-taxi-img {
-    width: 90vw;
-    max-width: 98vw;
-    margin: 0 auto;
-  }
-  .hero-taxi-img.left {
-    order: 1;
-  }
-  .hero-content {
-    order: 2;
-  }
-  .hero-taxi-img.right {
-    order: 3;
+    max-width: 95vw;
   }
 }
 @media (max-width: 600px) {
   .hero {
     padding: 1.2rem 0.1rem 1rem 0.1rem;
-    border-radius: 0;
-    margin: 0 0 1rem 0;
-    width: 100vw;
+    margin-bottom: 1rem;
   }
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-  .hero-content h2 {
-    font-size: 1.05rem;
-  }
-  .hero-content p {
-    font-size: 0.98rem;
-  }
-  .cta-btn {
-    font-size: 1rem;
-    padding: 0.7rem 1.2rem;
-  }
-  .features {
-    gap: 0.7rem;
-    margin: 1rem 0;
-    width: 100vw;
+  .container {
+    padding: 0 0.3rem;
   }
   .feature {
     min-width: unset;
@@ -324,6 +314,7 @@ const sendWhatsApp = () => {
   .contact-short {
     padding: 1rem 0.2rem;
     max-width: 98vw;
+    background: #facc15;
   }
 }
 @media (max-width: 700px) {
