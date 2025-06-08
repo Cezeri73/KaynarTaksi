@@ -116,25 +116,40 @@
 
 .cta-section {
   text-align: center;
-  padding: 60px 20px;
-  background: #f5f5f5;
-  border-radius: 10px;
+  padding: 48px 20px;
+  background: #1A237E;
+  border-radius: 18px;
+  color: #fff;
+  margin-top: 40px;
+  box-shadow: 0 4px 24px #FFD60022;
+}
+
+.cta-section h2, .cta-section p {
+  color: #fff;
 }
 
 .cta-button {
-  display: inline-block;
-  background-color: #1a237e;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  background-color: #FFD600;
+  color: #1A237E;
+  padding: 15px 32px;
+  border-radius: 32px;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.4em;
+  font-weight: 700;
+  box-shadow: 0 2px 12px #FFD60033;
   margin-top: 20px;
-  transition: background-color 0.3s;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  gap: 10px;
+  border: 2px solid #FFD600;
 }
 
 .cta-button:hover {
-  background-color: #0d47a1;
+  background: #fff;
+  color: #1A237E;
+  border-color: #FFD600;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {

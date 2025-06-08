@@ -189,4 +189,67 @@ import { RouterLink, RouterView } from 'vue-router'
     background: #ffe066;
   }
 }
+nav {
+  background: #fff;
+  box-shadow: 0 2px 12px #0001;
+  border-radius: 0 0 18px 18px;
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.logo a {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #1A237E;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  color: #1A237E;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.nav-links a.active,
+.nav-links a:hover {
+  color: #FFD600;
+}
+.phone {
+  background: #FFD600;
+  color: #1A237E;
+  font-weight: 700;
+  padding: 0.6rem 1.2rem;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px #FFD60033;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .logo a {
+    font-size: 1.3rem;
+  }
+  .phone {
+    font-size: 0.98rem;
+    padding: 0.5rem 1rem;
+  }
+}
 </style>
