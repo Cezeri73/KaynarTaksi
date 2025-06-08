@@ -4,29 +4,53 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div>
-    <!-- Üst iletişim barı -->
-    <div class="topbar">
-      <span>📞 <a href="tel:05446573773">0544 657 37 73</a></span>
-      <span>⏰ 7/24 Hizmet</span>
-      <span>📍 Şırnak Merkez</span>
-    </div>
-    <!-- Menü ve logo -->
-    <header class="main-header">
-      <div class="logo-area">
-        <span class="logo-icon">🚕</span>
-        <span class="logo-text">Kaynar Taksi</span>
-      </div>
-      <nav class="main-nav">
-        <RouterLink to="/" exact-active-class="active">Ana Sayfa</RouterLink>
-        <RouterLink to="/about" exact-active-class="active">Hakkımızda</RouterLink>
-        <RouterLink to="/contact" exact-active-class="active">İletişim</RouterLink>
+  <div class="app">
+    <header>
+      <nav>
+        <div class="logo">
+          <router-link to="/">Kaynar Taksi</router-link>
+        </div>
+        <div class="nav-links">
+          <router-link to="/">Ana Sayfa</router-link>
+          <router-link to="/hizmetler">Hizmetlerimiz</router-link>
+          <router-link to="/bolgeler">Hizmet Bölgeleri</router-link>
+          <router-link to="/iletisim">İletişim</router-link>
+        </div>
+        <div class="phone">
+          <a href="tel:+905364973773">
+            <font-awesome-icon :icon="['fas', 'phone']" /> 0536 497 37 73
+          </a>
+        </div>
       </nav>
-      <a class="cta-header" href="tel:05446573773">TAKSİ ÇAĞIR</a>
     </header>
-    <RouterView />
-    <!-- Mobilde sabit Taksi Ara butonu -->
-    <a href="tel:05446573773" class="mobile-call-btn">📞 Hemen Taksi Ara</a>
+
+    <main>
+      <router-view/>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Kaynar Taksi</h3>
+          <p>Şırnak, Cizre ve tüm ilçelerde 7/24 güvenilir taksi hizmeti</p>
+        </div>
+        <div class="footer-section">
+          <h3>İletişim</h3>
+          <p><a href="tel:+905364973773">0536 497 37 73</a></p>
+          <p>Hizmet Bölgeleri: Şırnak, Cizre, Silopi, İdil, Uludere, Beytüşşebap, Güçlükonak</p>
+        </div>
+        <div class="footer-section">
+          <h3>Hızlı Erişim</h3>
+          <router-link to="/">Ana Sayfa</router-link>
+          <router-link to="/hizmetler">Hizmetlerimiz</router-link>
+          <router-link to="/bolgeler">Hizmet Bölgeleri</router-link>
+          <router-link to="/iletisim">İletişim</router-link>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Kaynar Taksi. Tüm hakları saklıdır.</p>
+      </div>
+    </footer>
   </div>
 </template>
 

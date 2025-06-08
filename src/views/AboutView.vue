@@ -21,7 +21,7 @@
 <style scoped>
 .about-bg {
   background: #fff;
-  min-height: 100vh;
+    min-height: 100vh;
   padding-bottom: 2rem;
 }
 .about-section {
