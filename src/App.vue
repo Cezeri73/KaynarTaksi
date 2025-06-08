@@ -190,6 +190,9 @@ import { RouterLink, RouterView } from 'vue-router'
   }
 }
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background: #fff;
   box-shadow: 0 2px 12px #0001;
   border-radius: 0 0 18px 18px;
@@ -198,6 +201,12 @@ nav {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 32px;
+  min-height: 68px;
+}
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 .logo a {
   font-size: 2rem;
@@ -205,10 +214,14 @@ nav {
   color: #1A237E;
   text-decoration: none;
   letter-spacing: -1px;
+  display: flex;
+  align-items: center;
 }
 .nav-links {
+  flex: 2;
   display: flex;
-  gap: 2rem;
+  justify-content: center;
+  gap: 2.5rem;
 }
 .nav-links a {
   color: #1A237E;
@@ -218,36 +231,76 @@ nav {
   position: relative;
   padding-bottom: 2px;
   transition: color 0.2s;
+  display: inline-block;
+}
+.nav-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #FFD600;
+  border-radius: 2px;
+  transition: width 0.25s;
+  margin: 0 auto;
+}
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  width: 100%;
 }
 .nav-links a.active,
 .nav-links a:hover {
   color: #FFD600;
 }
 .phone {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.phone a {
   background: #FFD600;
   color: #1A237E;
   font-weight: 700;
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 24px;
   font-size: 1.1rem;
   box-shadow: 0 2px 8px #FFD60033;
   display: flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.phone a:hover {
+  background: #1A237E;
+  color: #FFD600;
+  transform: scale(1.05);
+}
+@media (max-width: 1100px) {
+  .nav-links {
+    gap: 1.2rem;
+  }
 }
 @media (max-width: 900px) {
   nav {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 0.5rem;
+    min-height: unset;
+  }
+  .logo {
+    justify-content: center;
+    margin-bottom: 0.5rem;
   }
   .nav-links {
+    justify-content: center;
     gap: 1rem;
   }
   .logo a {
     font-size: 1.3rem;
   }
   .phone {
+    justify-content: center;
     font-size: 0.98rem;
     padding: 0.5rem 1rem;
   }

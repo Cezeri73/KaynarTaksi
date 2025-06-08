@@ -119,7 +119,7 @@
   padding: 48px 20px;
   background: #1A237E;
   border-radius: 18px;
-  color: #fff;
+  color: #000000;
   margin-top: 40px;
   box-shadow: 0 4px 24px #FFD60022;
 }
