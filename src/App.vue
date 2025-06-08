@@ -189,11 +189,11 @@ import { RouterLink, RouterView } from 'vue-router'
     background: #ffe066;
   }
 }
-nav {
+nav, .nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #fff;
+  background: #fff !important;
   box-shadow: 0 2px 12px #0001;
   border-radius: 0 0 18px 18px;
   padding: 0.8rem 2rem;
@@ -204,23 +204,23 @@ nav {
   min-height: 68px;
   gap: 0;
 }
-.logo {
+.logo, .nav .logo {
   flex: 0 0 auto;
   min-width: 160px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.logo a {
+.logo a, .nav .logo a {
   font-size: 2rem;
   font-weight: 900;
-  color: #1A237E;
+  color: #1A237E !important;
   text-decoration: none;
   letter-spacing: -1px;
   display: flex;
   align-items: center;
 }
-.nav-links {
+.nav-links, .nav .nav-links {
   flex: 1 1 0;
   display: flex;
   justify-content: center;
@@ -228,8 +228,8 @@ nav {
   min-width: 0;
   overflow: hidden;
 }
-.nav-links a {
-  color: #1A237E;
+.nav-links a, .nav .nav-links a {
+  color: #1A237E !important;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -239,7 +239,7 @@ nav {
   display: inline-block;
   white-space: nowrap;
 }
-.nav-links a::after {
+.nav-links a::after, .nav .nav-links a::after {
   content: '';
   display: block;
   width: 0;
@@ -250,23 +250,27 @@ nav {
   margin: 0 auto;
 }
 .nav-links a.active::after,
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav .nav-links a.active::after,
+.nav .nav-links a:hover::after {
   width: 100%;
 }
 .nav-links a.active,
-.nav-links a:hover {
-  color: #FFD600;
+.nav-links a:hover,
+.nav .nav-links a.active,
+.nav .nav-links a:hover {
+  color: #FFD600 !important;
 }
-.phone {
+.phone, .nav .phone {
   flex: 0 0 auto;
   min-width: 160px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.phone a {
+.phone a, .nav .phone a {
   background: #FFD600;
-  color: #1A237E;
+  color: #1A237E !important;
   font-weight: 700;
   padding: 0.7rem 1.5rem;
   border-radius: 24px;
@@ -278,37 +282,37 @@ nav {
   text-decoration: none;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
-.phone a:hover {
+.phone a:hover, .nav .phone a:hover {
   background: #1A237E;
-  color: #FFD600;
+  color: #FFD600 !important;
   transform: scale(1.05);
 }
 @media (max-width: 1100px) {
-  .nav-links {
+  .nav-links, .nav .nav-links {
     gap: 1.2rem;
   }
 }
 @media (max-width: 900px) {
-  nav {
+  nav, .nav {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 0.5rem;
     min-height: unset;
   }
-  .logo {
+  .logo, .nav .logo {
     justify-content: center;
     margin-bottom: 0.5rem;
     min-width: unset;
   }
-  .nav-links {
+  .nav-links, .nav .nav-links {
     justify-content: center;
     gap: 1rem;
     min-width: unset;
   }
-  .logo a {
+  .logo a, .nav .logo a {
     font-size: 1.3rem;
   }
-  .phone {
+  .phone, .nav .phone {
     justify-content: center;
     font-size: 0.98rem;
     padding: 0.5rem 1rem;
