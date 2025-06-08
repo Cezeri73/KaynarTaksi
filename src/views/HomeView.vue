@@ -103,7 +103,7 @@ const areas = [
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px 12px 32px 12px;
-  background: #f4f6fb;
+  background: #F7F8FA;
   min-height: 100vh;
   font-family: 'Inter', 'Roboto', 'Open Sans', Arial, sans-serif;
 }
@@ -111,11 +111,11 @@ const areas = [
 .hero {
   text-align: center;
   padding: 48px 20px 40px 20px;
-  background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #FFD600 0%, #1A237E 100%);
+  color: #1A237E;
   border-radius: 22px;
   margin-bottom: 40px;
-  box-shadow: 0 4px 24px #1976d220;
+  box-shadow: 0 4px 24px #FFD60022;
 }
 
 .hero h1 {
@@ -123,12 +123,13 @@ const areas = [
   font-weight: 800;
   margin-bottom: 18px;
   letter-spacing: -1px;
+  color: #1A237E;
 }
 
 .subtitle {
   font-size: 1.3em;
   margin-bottom: 28px;
-  color: #e3e3e3;
+  color: #222;
 }
 
 .phone-number {
@@ -138,21 +139,23 @@ const areas = [
 .call-button {
   display: inline-flex;
   align-items: center;
-  background-color: #1976d2;
-  color: #fff;
+  background-color: #FFD600;
+  color: #1A237E;
   padding: 15px 32px;
   border-radius: 32px;
   text-decoration: none;
   font-size: 1.4em;
   font-weight: 700;
-  box-shadow: 0 2px 12px #1976d220;
-  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px #FFD60033;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
   gap: 10px;
+  border: 2px solid #FFD600;
 }
 
 .call-button:hover {
-  background: #FFD600;
-  color: #222;
+  background: #1A237E;
+  color: #FFD600;
+  border-color: #FFD600;
   transform: scale(1.05);
 }
 
@@ -163,7 +166,7 @@ const areas = [
 .service-areas h2 {
   text-align: center;
   margin-bottom: 30px;
-  color: #222;
+  color: #1A237E;
   font-size: 2.1em;
   font-weight: 800;
 }
@@ -176,14 +179,14 @@ const areas = [
 }
 
 .area-card {
-  background: #fff;
+  background: #FFF;
   color: #222;
   padding: 32px 22px 28px 22px;
   border-radius: 18px;
   text-align: center;
   box-shadow: 0 4px 24px #0001;
-  transition: transform 0.18s, box-shadow 0.18s;
-  border: 1.5px solid #f0f0f0;
+  transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
+  border: 2px solid #f0f0f0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -192,12 +195,12 @@ const areas = [
 
 .area-card:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 32px #1976d220;
+  box-shadow: 0 8px 32px #FFD60033;
   border-color: #FFD600;
 }
 
 .area-card h3 {
-  color: #1976d2;
+  color: #1A237E;
   margin-bottom: 10px;
   font-size: 1.35em;
   font-weight: 700;
@@ -213,19 +216,21 @@ const areas = [
   margin-top: 18px;
   display: inline-flex;
   align-items: center;
-  color: #43a047;
+  color: #1A237E;
   font-weight: 700;
   font-size: 1.15em;
   gap: 7px;
   text-decoration: none;
-  background: #f4f6fb;
+  background: #FFD60022;
   padding: 7px 18px;
   border-radius: 22px;
   transition: background 0.2s, color 0.2s;
+  border: 2px solid #FFD60000;
 }
 .area-phone:hover {
   background: #FFD600;
-  color: #1976d2;
+  color: #1A237E;
+  border-color: #FFD600;
 }
 
 .features {
@@ -235,7 +240,7 @@ const areas = [
 .features h2 {
   text-align: center;
   margin-bottom: 30px;
-  color: #222;
+  color: #1A237E;
   font-size: 2em;
   font-weight: 800;
 }
@@ -251,7 +256,7 @@ const areas = [
   padding: 30px;
   border-radius: 14px;
   text-align: center;
-  box-shadow: 0 2px 8px #0001;
+  box-shadow: 0 2px 8px #FFD60011;
 }
 
 .feature-card svg {
@@ -263,18 +268,18 @@ const areas = [
 .cta-section {
   text-align: center;
   padding: 48px 20px;
-  background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+  background: linear-gradient(135deg, #FFD600 0%, #1A237E 100%);
   border-radius: 18px;
-  color: #fff;
+  color: #1A237E;
   margin-top: 40px;
-  box-shadow: 0 4px 24px #1976d220;
+  box-shadow: 0 4px 24px #FFD60022;
 }
 
 .cta-button {
   display: inline-flex;
   align-items: center;
   background-color: #FFD600;
-  color: #222;
+  color: #1A237E;
   padding: 15px 32px;
   border-radius: 32px;
   text-decoration: none;
@@ -284,11 +289,13 @@ const areas = [
   margin-top: 20px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
   gap: 10px;
+  border: 2px solid #FFD600;
 }
 
 .cta-button:hover {
-  background: #1976d2;
-  color: #fff;
+  background: #1A237E;
+  color: #FFD600;
+  border-color: #FFD600;
   transform: scale(1.05);
 }
 
