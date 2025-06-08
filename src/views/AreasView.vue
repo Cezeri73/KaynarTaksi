@@ -102,27 +102,39 @@
 }
 
 .area-card {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
+  background: #FFF9E1;
+  color: #1A237E;
+  padding: 32px 22px 28px 22px;
+  border-radius: 18px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  box-shadow: 0 4px 24px #FFD60033;
+  transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
+  border: 2px solid #FFE082;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 160px;
 }
 
 .area-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px #FFD60055;
+  border-color: #FFD600;
 }
 
 .area-card h3 {
-  color: #1a237e;
-  margin-bottom: 15px;
-  font-size: 1.5em;
+  color: #1A237E;
+  margin-bottom: 10px;
+  font-size: 1.35em;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 .area-card p {
-  color: #666;
-  margin-bottom: 20px;
+  color: #333;
+  margin-bottom: 0;
+  font-size: 1.08em;
+  font-weight: 500;
 }
 
 .area-phone {

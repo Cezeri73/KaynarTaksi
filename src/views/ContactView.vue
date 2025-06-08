@@ -73,11 +73,24 @@
 }
 
 .info-card {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
+  background: #FFF9E1;
+  color: #1A237E;
+  padding: 32px 22px 28px 22px;
+  border-radius: 18px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 24px #FFD60033;
+  transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
+  border: 2px solid #FFE082;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 120px;
+}
+
+.info-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px #FFD60055;
+  border-color: #FFD600;
 }
 
 .info-card svg {
@@ -87,16 +100,18 @@
 }
 
 .info-card h3 {
-  color: #333;
-  margin-bottom: 15px;
-  font-size: 1.5em;
+  color: #1A237E;
+  margin-bottom: 10px;
+  font-size: 1.25em;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
-.info-card a {
-  color: #4CAF50;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2em;
+.info-card p, .info-card a {
+  color: #333;
+  margin-bottom: 0;
+  font-size: 1.08em;
+  font-weight: 500;
 }
 
 .cta-section {
