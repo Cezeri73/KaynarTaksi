@@ -68,70 +68,8 @@ import { RouterLink, RouterView } from 'vue-router'
   color: #ffe066;
   text-decoration: none;
 }
-.main-header {
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.2rem 2rem 1.2rem 2rem;
-  box-shadow: 0 2px 8px #0001;
-}
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.logo-icon {
-  font-size: 2.2rem;
-}
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #222;
-}
-.main-nav {
-  display: flex;
-  gap: 2rem;
-}
-.main-nav a {
-  color: #222;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  position: relative;
-  padding-bottom: 2px;
-  transition: color 0.2s;
-}
-.main-nav a.active,
-.main-nav a:hover {
-  color: #facc15;
-}
-.cta-header {
-  background: #facc15;
-  color: #222;
-  font-weight: bold;
-  padding: 0.7rem 1.5rem;
-  border-radius: 2rem;
-  text-decoration: none;
-  font-size: 1.1rem;
-  box-shadow: 0 2px 8px #0001;
-  transition: background 0.2s;
-}
-.cta-header:hover {
-  background: #fde047;
-}
 @media (max-width: 800px) {
-  .main-header {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  .main-nav {
-    gap: 1rem;
-  }
-  .cta-header {
-    margin-top: 0.5rem;
-  }
+  /* main-header, main-nav, cta-header kaldırıldı */
 }
 @media (max-width: 600px) {
   .topbar {
@@ -140,25 +78,6 @@ import { RouterLink, RouterView } from 'vue-router'
     flex-direction: column;
     align-items: center;
     padding: 0.2rem 0;
-  }
-  .main-header {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.7rem 0.3rem;
-  }
-  .logo-icon {
-    font-size: 1.3rem;
-  }
-  .logo-text {
-    font-size: 1.1rem;
-  }
-  .main-nav {
-    gap: 0.5rem;
-    font-size: 0.98rem;
-  }
-  .cta-header {
-    font-size: 0.98rem;
-    padding: 0.5rem 1rem;
   }
 }
 .mobile-call-btn {
