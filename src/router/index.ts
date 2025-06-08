@@ -9,8 +9,8 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: {
-        title: 'Kaynar Taksi - Şırnak\'ın En Güvenilir Taksi Hizmeti',
-        description: 'Şırnak\'ta 7/24 güvenilir taksi hizmeti. Şırnak merkez, Cizre, Silopi, İdil ve tüm ilçelerde hizmetinizdeyiz. 0536 497 37 73'
+        title: "Şırnak Taksi | Kaynar Taksi 7/24 Güvenilir Taksi Hizmeti",
+        description: "Şırnak, Cizre ve tüm ilçelerde 7/24 hızlı ve güvenilir taksi hizmeti. Hemen arayın: 0536 497 37 73"
       }
     },
     {
@@ -18,8 +18,8 @@ const router = createRouter({
       name: 'services',
       component: () => import('../views/ServicesView.vue'),
       meta: {
-        title: 'Hizmetlerimiz - Kaynar Taksi',
-        description: 'Şehir içi, havalimanı transferi, VIP transfer, grup transferi ve özel taksi hizmetleri. 0536 497 37 73'
+        title: "Şırnak Taksi Hizmetleri | 7/24 Hızlı ve Güvenilir Taksi",
+        description: "Şırnak ve ilçelerinde şehir içi, havalimanı transferi, VIP ve grup taksi hizmetleri. 0536 497 37 73"
       }
     },
     {
@@ -27,8 +27,8 @@ const router = createRouter({
       name: 'areas',
       component: () => import('../views/AreasView.vue'),
       meta: {
-        title: 'Hizmet Bölgelerimiz - Kaynar Taksi',
-        description: 'Şırnak merkez, Cizre, Silopi, İdil, Uludere, Beytüşşebap ve Güçlükonak\'ta taksi hizmeti. 0536 497 37 73'
+        title: "Şırnak Taksi Bölgeleri | Cizre, Silopi, İdil ve Tüm İlçeler",
+        description: "Şırnak merkez, Cizre, Silopi, İdil, Uludere, Beytüşşebap, Güçlükonak ve tüm ilçelerde 7/24 taksi hizmeti. 0536 497 37 73"
       }
     },
     {
@@ -36,8 +36,8 @@ const router = createRouter({
       name: 'area-detail',
       component: () => import('../views/AreaDetailView.vue'),
       meta: {
-        title: 'Bölge Hizmetleri - Kaynar Taksi',
-        description: 'Şırnak\'ın tüm ilçelerinde güvenilir taksi hizmeti. 0536 497 37 73'
+        title: "Şırnak Taksi | İlçe Taksi Hizmetleri",
+        description: "Şırnak'ın tüm ilçelerinde hızlı ve güvenilir taksi hizmeti. 0536 497 37 73"
       }
     },
     {
@@ -45,8 +45,8 @@ const router = createRouter({
       name: 'contact',
       component: () => import('../views/ContactView.vue'),
       meta: {
-        title: 'İletişim - Kaynar Taksi',
-        description: 'Kaynar Taksi ile iletişime geçin. 7/24 hizmetinizdeyiz. 0536 497 37 73'
+        title: "Şırnak Taksi İletişim | 7/24 Taksi Çağır",
+        description: "Kaynar Taksi ile iletişime geçin. 7/24 hızlı ve güvenilir taksi hizmeti için hemen arayın: 0536 497 37 73"
       }
     }
   ]

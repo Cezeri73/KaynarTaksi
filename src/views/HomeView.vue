@@ -25,15 +25,25 @@ const sendWhatsApp = () => {
   const text = `Merhaba, taksi çağırmak istiyorum.%0AAdresim/Konumum: ${pickup.value}%0AGideceğim yer: ${destination.value}`
   window.open(`https://wa.me/${phone}?text=${text}`, '_blank')
 }
+
+const areas = [
+  { name: "sirnak", title: "Şırnak Merkez", desc: "Şırnak merkezde ve tüm mahallelerinde 7/24 taksi hizmeti." },
+  { name: "cizre", title: "Cizre", desc: "Cizre ve çevresinde güvenilir taksi hizmeti." },
+  { name: "silopi", title: "Silopi", desc: "Silopi'de ekonomik ve hızlı taksi hizmeti." },
+  { name: "idil", title: "İdil", desc: "İdil'de konforlu ve güvenli taksi hizmeti." },
+  { name: "uludere", title: "Uludere", desc: "Uludere'de 7/24 taksi hizmeti." },
+  { name: "beytussebap", title: "Beytüşşebap", desc: "Beytüşşebap'ta güvenilir taksi hizmeti." },
+  { name: "guclukonak", title: "Güçlükonak", desc: "Güçlükonak'ta ekonomik taksi hizmeti." },
+]
 </script>
 
 <template>
   <div class="home">
     <div class="hero">
-      <h1>Kaynar Taksi</h1>
-      <p class="subtitle">Şırnak, Cizre ve Tüm İlçelerde 7/24 Güvenilir Taksi Hizmeti</p>
+      <h1>Şırnak Taksi | Kaynar Taksi 7/24 Güvenilir Hizmet</h1>
+      <p class="subtitle">Şırnak, Cizre ve Tüm İlçelerde 7/24 Hızlı ve Güvenilir Taksi Hizmeti</p>
       <div class="phone-number">
-        <a href="tel:+905364973773" class="call-button">
+        <a href="tel:+905364973773" class="call-button" aria-label="0536 497 37 73 numaralı telefonu ara">
           <font-awesome-icon :icon="['fas', 'phone']" /> 0536 497 37 73
         </a>
       </div>
@@ -42,67 +52,46 @@ const sendWhatsApp = () => {
     <div class="service-areas">
       <h2>Hizmet Bölgelerimiz</h2>
       <div class="areas-grid">
-        <div class="area-card">
-          <h3>Şırnak Merkez</h3>
-          <p>7/24 Taksi Hizmeti</p>
-        </div>
-        <div class="area-card">
-          <h3>Cizre</h3>
-          <p>7/24 Taksi Hizmeti</p>
-        </div>
-        <div class="area-card">
-          <h3>Silopi</h3>
-          <p>7/24 Taksi Hizmeti</p>
-        </div>
-        <div class="area-card">
-          <h3>İdil</h3>
-          <p>7/24 Taksi Hizmeti</p>
-        </div>
-        <div class="area-card">
-          <h3>Uludere</h3>
-          <p>7/24 Taksi Hizmeti</p>
-        </div>
-        <div class="area-card">
-          <h3>Beytüşşebap</h3>
-          <p>7/24 Taksi Hizmeti</p>
-        </div>
-        <div class="area-card">
-          <h3>Güçlükonak</h3>
-          <p>7/24 Taksi Hizmeti</p>
+        <div class="area-card" v-for="area in areas" :key="area.name">
+          <h3>{{ area.title }}</h3>
+          <p>{{ area.desc }}</p>
+          <a :href="'tel:+905364973773'" class="area-phone" aria-label="Taksi çağır: 0536 497 37 73">
+            <font-awesome-icon :icon="['fas', 'phone']" /> 0536 497 37 73
+          </a>
         </div>
       </div>
     </div>
 
     <div class="features">
-      <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+      <h2>Neden Kaynar Taksi?</h2>
       <div class="features-grid">
         <div class="feature-card">
           <font-awesome-icon :icon="['fas', 'clock']" />
-          <h3>7/24 Hizmet</h3>
-          <p>Günün her saati hizmetinizdeyiz</p>
+          <h3>7/24 Taksi Hizmeti</h3>
+          <p>Günün her saati Şırnak ve ilçelerinde hızlı taksi çağırma.</p>
         </div>
         <div class="feature-card">
           <font-awesome-icon :icon="['fas', 'shield-alt']" />
           <h3>Güvenli Ulaşım</h3>
-          <p>Deneyimli ve güvenilir sürücüler</p>
+          <p>Deneyimli ve güvenilir sürücüler ile güvenli yolculuk.</p>
         </div>
         <div class="feature-card">
           <font-awesome-icon :icon="['fas', 'car']" />
           <h3>Konforlu Araçlar</h3>
-          <p>Modern ve bakımlı araç filosu</p>
+          <p>Modern ve bakımlı araç filosu ile konforlu ulaşım.</p>
         </div>
         <div class="feature-card">
           <font-awesome-icon :icon="['fas', 'money-bill-wave']" />
           <h3>Uygun Fiyat</h3>
-          <p>Rekabetçi ve şeffaf fiyatlandırma</p>
+          <p>Şeffaf ve ekonomik fiyatlarla taksi hizmeti.</p>
         </div>
       </div>
     </div>
 
     <div class="cta-section">
       <h2>Hemen Taksi Çağırın</h2>
-      <p>Şırnak, Cizre ve tüm ilçelerde hizmetinizdeyiz</p>
-      <a href="tel:+905364973773" class="cta-button">
+      <p>Şırnak, Cizre ve tüm ilçelerde hızlı ve güvenilir taksi için hemen arayın.</p>
+      <a href="tel:+905364973773" class="cta-button" aria-label="0536 497 37 73 numaralı telefonu ara">
         <font-awesome-icon :icon="['fas', 'phone']" /> 0536 497 37 73
       </a>
     </div>
@@ -113,26 +102,33 @@ const sendWhatsApp = () => {
 .home {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 32px 12px 32px 12px;
+  background: #f4f6fb;
+  min-height: 100vh;
+  font-family: 'Inter', 'Roboto', 'Open Sans', Arial, sans-serif;
 }
 
 .hero {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #1a237e, #0d47a1);
-  color: white;
-  border-radius: 10px;
+  padding: 48px 20px 40px 20px;
+  background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+  color: #fff;
+  border-radius: 22px;
   margin-bottom: 40px;
+  box-shadow: 0 4px 24px #1976d220;
 }
 
 .hero h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
+  font-size: 2.8em;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
 }
 
 .subtitle {
-  font-size: 1.5em;
-  margin-bottom: 30px;
+  font-size: 1.3em;
+  margin-bottom: 28px;
+  color: #e3e3e3;
 }
 
 .phone-number {
@@ -140,18 +136,24 @@ const sendWhatsApp = () => {
 }
 
 .call-button {
-  display: inline-block;
-  background-color: #4CAF50;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: #fff;
+  padding: 15px 32px;
+  border-radius: 32px;
   text-decoration: none;
-  font-size: 1.5em;
-  transition: background-color 0.3s;
+  font-size: 1.4em;
+  font-weight: 700;
+  box-shadow: 0 2px 12px #1976d220;
+  transition: background 0.2s, transform 0.2s;
+  gap: 10px;
 }
 
 .call-button:hover {
-  background-color: #45a049;
+  background: #FFD600;
+  color: #222;
+  transform: scale(1.05);
 }
 
 .service-areas {
@@ -161,24 +163,69 @@ const sendWhatsApp = () => {
 .service-areas h2 {
   text-align: center;
   margin-bottom: 30px;
+  color: #222;
+  font-size: 2.1em;
+  font-weight: 800;
 }
 
 .areas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-bottom: 24px;
 }
 
 .area-card {
-  background: #f5f5f5;
-  padding: 20px;
-  border-radius: 10px;
+  background: #fff;
+  color: #222;
+  padding: 32px 22px 28px 22px;
+  border-radius: 18px;
   text-align: center;
-  transition: transform 0.3s;
+  box-shadow: 0 4px 24px #0001;
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 1.5px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 160px;
 }
 
 .area-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px #1976d220;
+  border-color: #FFD600;
+}
+
+.area-card h3 {
+  color: #1976d2;
+  margin-bottom: 10px;
+  font-size: 1.35em;
+  font-weight: 700;
+}
+
+.area-card p {
+  color: #555;
+  margin-bottom: 0;
+  font-size: 1.08em;
+}
+
+.area-phone {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  color: #43a047;
+  font-weight: 700;
+  font-size: 1.15em;
+  gap: 7px;
+  text-decoration: none;
+  background: #f4f6fb;
+  padding: 7px 18px;
+  border-radius: 22px;
+  transition: background 0.2s, color 0.2s;
+}
+.area-phone:hover {
+  background: #FFD600;
+  color: #1976d2;
 }
 
 .features {
@@ -188,6 +235,9 @@ const sendWhatsApp = () => {
 .features h2 {
   text-align: center;
   margin-bottom: 30px;
+  color: #222;
+  font-size: 2em;
+  font-weight: 800;
 }
 
 .features-grid {
@@ -197,54 +247,74 @@ const sendWhatsApp = () => {
 }
 
 .feature-card {
-  background: white;
+  background: #fff;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 14px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px #0001;
 }
 
 .feature-card svg {
   font-size: 2.5em;
-  color: #1a237e;
+  color: #FFD600;
   margin-bottom: 20px;
 }
 
 .cta-section {
   text-align: center;
-  padding: 60px 20px;
-  background: #f5f5f5;
-  border-radius: 10px;
+  padding: 48px 20px;
+  background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+  border-radius: 18px;
+  color: #fff;
+  margin-top: 40px;
+  box-shadow: 0 4px 24px #1976d220;
 }
 
 .cta-button {
-  display: inline-block;
-  background-color: #1a237e;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  background-color: #FFD600;
+  color: #222;
+  padding: 15px 32px;
+  border-radius: 32px;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.4em;
+  font-weight: 700;
+  box-shadow: 0 2px 12px #FFD60033;
   margin-top: 20px;
-  transition: background-color 0.3s;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  gap: 10px;
 }
 
 .cta-button:hover {
-  background-color: #0d47a1;
+  background: #1976d2;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .areas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2em;
   }
-  
   .subtitle {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
-  
   .call-button {
-    font-size: 1.2em;
-    padding: 12px 24px;
+    font-size: 1.1em;
+    padding: 12px 20px;
+  }
+  .areas-grid {
+    grid-template-columns: 1fr;
+  }
+  .area-card {
+    padding: 22px 10px 18px 10px;
+    min-height: 120px;
   }
 }
 </style>
