@@ -119,13 +119,13 @@
   padding: 48px 20px;
   background: #1A237E;
   border-radius: 18px;
-  color: #000000;
+  color: #fffdfd;
   margin-top: 40px;
   box-shadow: 0 4px 24px #FFD60022;
 }
 
 .cta-section h2, .cta-section p {
-  color: #fff;
+  color: #1A237E;
 }
 
 .cta-button {

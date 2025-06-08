@@ -202,11 +202,14 @@ nav {
   justify-content: space-between;
   margin-bottom: 32px;
   min-height: 68px;
+  gap: 0;
 }
 .logo {
-  flex: 1;
+  flex: 0 0 auto;
+  min-width: 160px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 .logo a {
   font-size: 2rem;
@@ -218,10 +221,12 @@ nav {
   align-items: center;
 }
 .nav-links {
-  flex: 2;
+  flex: 1 1 0;
   display: flex;
   justify-content: center;
   gap: 2.5rem;
+  min-width: 0;
+  overflow: hidden;
 }
 .nav-links a {
   color: #1A237E;
@@ -232,6 +237,7 @@ nav {
   padding-bottom: 2px;
   transition: color 0.2s;
   display: inline-block;
+  white-space: nowrap;
 }
 .nav-links a::after {
   content: '';
@@ -252,7 +258,8 @@ nav {
   color: #FFD600;
 }
 .phone {
-  flex: 1;
+  flex: 0 0 auto;
+  min-width: 160px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -291,10 +298,12 @@ nav {
   .logo {
     justify-content: center;
     margin-bottom: 0.5rem;
+    min-width: unset;
   }
   .nav-links {
     justify-content: center;
     gap: 1rem;
+    min-width: unset;
   }
   .logo a {
     font-size: 1.3rem;
@@ -303,6 +312,7 @@ nav {
     justify-content: center;
     font-size: 0.98rem;
     padding: 0.5rem 1rem;
+    min-width: unset;
   }
 }
 </style>
