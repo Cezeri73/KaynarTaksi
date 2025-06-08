@@ -179,14 +179,14 @@ const areas = [
 }
 
 .area-card {
-  background: #FFF;
-  color: #222;
+  background: #FFF9E1;
+  color: #1A237E;
   padding: 32px 22px 28px 22px;
   border-radius: 18px;
   text-align: center;
-  box-shadow: 0 4px 24px #0001;
+  box-shadow: 0 4px 24px #FFD60033;
   transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
-  border: 2px solid #f0f0f0;
+  border: 2px solid #FFE082;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,7 +195,7 @@ const areas = [
 
 .area-card:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 32px #FFD60033;
+  box-shadow: 0 8px 32px #FFD60055;
   border-color: #FFD600;
 }
 
@@ -203,13 +203,15 @@ const areas = [
   color: #1A237E;
   margin-bottom: 10px;
   font-size: 1.35em;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 .area-card p {
-  color: #555;
+  color: #333;
   margin-bottom: 0;
   font-size: 1.08em;
+  font-weight: 500;
 }
 
 .area-phone {
