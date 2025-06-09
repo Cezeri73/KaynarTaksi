@@ -1,6 +1,12 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
+
+const menuOpen = ref(false)
+function toggleMenu() {
+  menuOpen.value = !menuOpen.value
+}
 </script>
 
 <template>
@@ -10,7 +16,10 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="logo">
           <router-link to="/">Kaynar Taksi</router-link>
         </div>
-        <div class="nav-links">
+        <button class="hamburger" aria-label="Menüyü Aç/Kapat" @click="toggleMenu" :aria-expanded="menuOpen">
+          <font-awesome-icon :icon="['fas', 'bars']" />
+        </button>
+        <div class="nav-links" :class="{ open: menuOpen }">
           <router-link to="/">Ana Sayfa</router-link>
           <router-link to="/hizmetler">Hizmetlerimiz</router-link>
           <router-link to="/bolgeler">Hizmet Bölgeleri</router-link>
@@ -109,7 +118,8 @@ import { RouterLink, RouterView } from 'vue-router'
   }
 }
 nav, .nav {
-  position: sticky;
+  width: 100%;
+  position: relative;
   top: 0;
   z-index: 100;
   background: #fff !important;
@@ -119,9 +129,9 @@ nav, .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
   min-height: 68px;
   gap: 0;
+  margin-bottom: 0;
 }
 .logo, .nav .logo {
   flex: 0 0 auto;
@@ -139,15 +149,33 @@ nav, .nav {
   display: flex;
   align-items: center;
 }
-.nav-links, .nav .nav-links {
-  flex: 1 1 0;
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #1A237E;
+  text-shadow: 0 1px 6px #fff, 0 0px 2px #1A237E44;
+  cursor: pointer;
+  margin-left: 1rem;
+  z-index: 120;
+  outline: 2px solid transparent;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.hamburger:focus, .hamburger:hover {
+  color: #FFD600;
+  text-shadow: 0 1px 6px #1A237E, 0 0px 2px #FFD60044;
+  outline: 2px solid #FFD600;
+}
+.nav-links {
   display: flex;
+  flex: 1 1 0;
   justify-content: center;
   gap: 2.5rem;
   min-width: 0;
   overflow: hidden;
 }
-.nav-links a, .nav .nav-links a {
+.nav-links a {
   color: #1A237E !important;
   text-decoration: none;
   font-weight: 600;
@@ -158,7 +186,7 @@ nav, .nav {
   display: inline-block;
   white-space: nowrap;
 }
-.nav-links a::after, .nav .nav-links a::after {
+.nav-links a::after {
   content: '';
   display: block;
   width: 0;
@@ -169,15 +197,11 @@ nav, .nav {
   margin: 0 auto;
 }
 .nav-links a.active::after,
-.nav-links a:hover::after,
-.nav .nav-links a.active::after,
-.nav .nav-links a:hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 .nav-links a.active,
-.nav-links a:hover,
-.nav .nav-links a.active,
-.nav .nav-links a:hover {
+.nav-links a:hover {
   color: #FFD600 !important;
 }
 .phone, .nav .phone {
@@ -206,36 +230,150 @@ nav, .nav {
   color: #FFD600 !important;
   transform: scale(1.05);
 }
-@media (max-width: 1100px) {
-  .nav-links, .nav .nav-links {
-    gap: 1.2rem;
-  }
-}
 @media (max-width: 900px) {
   nav, .nav {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0.5rem;
-    min-height: unset;
+    flex-direction: row;
+    padding: 0.8rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 68px;
   }
-  .logo, .nav .logo {
-    justify-content: center;
-    margin-bottom: 0.5rem;
+  .logo {
+    order: 1;
+    flex: 1 1 auto;
+    text-align: left;
     min-width: unset;
   }
-  .nav-links, .nav .nav-links {
-    justify-content: center;
-    gap: 1rem;
-    min-width: unset;
+  .hamburger {
+    display: block;
+    order: 2;
+    margin-left: auto;
+    margin-right: 1rem;
   }
-  .logo a, .nav .logo a {
-    font-size: 1.3rem;
-  }
-  .phone, .nav .phone {
-    justify-content: center;
-    font-size: 0.98rem;
+  .phone {
+    order: 3;
+    flex: 0 0 auto;
+    font-size: 0.9rem;
     padding: 0.5rem 1rem;
     min-width: unset;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 8px 32px #0002;
+    border-radius: 0 0 18px 18px;
+    padding: 1.2rem 0 1.2rem 0;
+    gap: 1.5rem;
+    align-items: center;
+    z-index: 110;
+    animation: fadeIn 0.2s;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .logo a, .nav .logo a {
+    font-size: 1.5rem;
+  }
+  .phone a, .nav .phone a {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    min-width: unset;
+  }
+}
+@media (min-width: 901px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .hamburger {
+    display: none !important;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+footer {
+  background: #1A237E;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 -2px 12px #0002;
+  border-radius: 18px 18px 0 0;
+  margin-top: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0;
+}
+
+.footer-section {
+  flex: 1 1 calc(33.33% - 20px);
+  max-width: 400px;
+  text-align: left !important;
+  box-sizing: border-box;
+}
+
+.footer-section h3 {
+  color: #FFD600;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.footer-section p, .footer-section a {
+  color: #f0f0f0;
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  text-decoration: none;
+  display: block;
+  text-align: left !important;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  color: #FFD600;
+}
+
+.footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  text-align: center;
+  color: #f0f0f0;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer-section {
+    flex: 1 1 100%;
+    max-width: 90%;
+    min-width: unset;
+    text-align: center !important;
   }
 }
 </style>

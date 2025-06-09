@@ -10,7 +10,8 @@ import {
   faCar, 
   faUsers, 
   faClock, 
-  faMapMarker
+  faMapMarker,
+  faBars
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -25,7 +26,8 @@ library.add(
   faCar,
   faUsers,
   faClock,
-  faMapMarker
+  faMapMarker,
+  faBars
 )
 
 const app = createApp(App)

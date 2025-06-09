@@ -27,75 +27,94 @@ const sendWhatsApp = () => {
 }
 
 const areas = [
-  { name: "sirnak", title: "Şırnak Merkez", desc: "Şırnak merkezde ve tüm mahallelerinde 7/24 taksi hizmeti." },
-  { name: "cizre", title: "Cizre", desc: "Cizre ve çevresinde güvenilir taksi hizmeti." },
-  { name: "silopi", title: "Silopi", desc: "Silopi'de ekonomik ve hızlı taksi hizmeti." },
-  { name: "idil", title: "İdil", desc: "İdil'de konforlu ve güvenli taksi hizmeti." },
-  { name: "uludere", title: "Uludere", desc: "Uludere'de 7/24 taksi hizmeti." },
-  { name: "beytussebap", title: "Beytüşşebap", desc: "Beytüşşebap'ta güvenilir taksi hizmeti." },
-  { name: "guclukonak", title: "Güçlükonak", desc: "Güçlükonak'ta ekonomik taksi hizmeti." },
+  { 
+    name: "sirnak", 
+    title: "Şırnak Merkez", 
+    desc: "Şırnak merkezde ve tüm mahallelerinde **7/24** taksi hizmeti. Güvenilir, hızlı, konforlu ve **ekonomik** ulaşım için Şırnak Merkez 7/24 Ekonomi Taksi'yi tercih edin. Yeni Mahalle Dilan Sokak'taki adresimizden kolayca ulaşılabiliriz.",
+    neighborhoods: "Tüm mahallelerde hizmet veriyoruz: Yeni Mahalle, Şehit Ali Batmaz Caddesi çevresi ve diğer tüm semtler."
+  },
 ]
 </script>
 
 <template>
-  <div class="home">
-    <div class="hero">
-      <h1>Şırnak Taksi | Kaynar Taksi 7/24 Güvenilir Hizmet</h1>
-      <p class="subtitle">Şırnak, Cizre ve Tüm İlçelerde 7/24 Hızlı ve Güvenilir Taksi Hizmeti</p>
+  <main class="home">
+    <section class="hero" aria-label="Ana başlık ve iletişim">
+      <h1>Şırnak Merkez 7/24 Ekonomi Taksi | Hızlı, Güvenilir ve Ekonomik Taksi Hizmeti</h1>
+      <p class="subtitle">Şırnak Merkez'de 7/24 Hızlı, Güvenilir ve Ekonomik Taksi Hizmeti. Yeni Mahalle Dilan Sokak'taki adresimizle bütçenize uygun, konforlu ve deneyimli sürücülerimizle ulaşım sağlıyoruz.</p>
       <div class="phone-number">
         <a href="tel:+905364973773" class="call-button" aria-label="0536 497 37 73 numaralı telefonu ara">
           <font-awesome-icon :icon="['fas', 'phone']" /> 0536 497 37 73
         </a>
       </div>
-    </div>
+      <img src="/taxi-hero.jpg" alt="Şırnak Merkez Ekonomi Taksi Aracı" class="hero-image"/>
+    </section>
 
-    <div class="service-areas">
-      <h2>Hizmet Bölgelerimiz</h2>
+    <section class="service-areas" aria-label="Hizmet bölgeleri">
+      <h2>Şırnak Merkez'de Taksi Hizmeti</h2>
       <div class="areas-grid">
-        <div class="area-card" v-for="area in areas" :key="area.name">
+        <article class="area-card" v-for="area in areas" :key="area.name">
           <h3>{{ area.title }}</h3>
           <p>{{ area.desc }}</p>
+          <p class="neighborhoods">{{ area.neighborhoods }}</p>
           <a :href="'tel:+905364973773'" class="area-phone" aria-label="Taksi çağır: 0536 497 37 73">
             <font-awesome-icon :icon="['fas', 'phone']" /> 0536 497 37 73
           </a>
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="features">
-      <h2>Neden Kaynar Taksi?</h2>
+    <section class="features" aria-label="Hizmet özellikleri">
+      <h2>Neden Şırnak Merkez 7/24 Ekonomi Taksi'yi Seçmelisiniz?</h2>
       <div class="features-grid">
-        <div class="feature-card">
+        <article class="feature-card">
           <font-awesome-icon :icon="['fas', 'clock']" />
-          <h3>7/24 Taksi Hizmeti</h3>
-          <p>Günün her saati Şırnak ve ilçelerinde hızlı taksi çağırma.</p>
-        </div>
-        <div class="feature-card">
+          <h3>7/24 Kesintisiz Taksi Hizmeti</h3>
+          <p>Günün her saati Şırnak Merkez'de hızlı taksi çağırma imkanı. Gece yarısı da olsa, sabahın ilk ışıkları da, her zaman yanınızdayız. Acil durumlarda anında taksi.</p>
+        </article>
+        <article class="feature-card">
           <font-awesome-icon :icon="['fas', 'shield-alt']" />
-          <h3>Güvenli Ulaşım</h3>
-          <p>Deneyimli ve güvenilir sürücüler ile güvenli yolculuk.</p>
-        </div>
-        <div class="feature-card">
+          <h3>Güvenli ve Profesyonel Ulaşım</h3>
+          <p>Deneyimli ve güvenilir sürücüler ile güvenli yolculuk. Tüm sürücülerimiz profesyonel eğitimli, bölgeyi iyi tanıyor ve trafik kurallarına titizlikle uyar.</p>
+        </article>
+        <article class="feature-card">
           <font-awesome-icon :icon="['fas', 'car']" />
-          <h3>Konforlu Araçlar</h3>
-          <p>Modern ve bakımlı araç filosu ile konforlu ulaşım.</p>
-        </div>
-        <div class="feature-card">
+          <h3>Konforlu ve Bakımlı Araçlar</h3>
+          <p>Modern ve bakımlı araç filosu ile konforlu ulaşım. Tüm araçlarımız düzenli bakımlı, temiz ve klimalıdır. Keyifli bir yolculuk deneyimi sunar.</p>
+        </article>
+        <article class="feature-card">
           <font-awesome-icon :icon="['fas', 'money-bill-wave']" />
-          <h3>Uygun Fiyat</h3>
-          <p>Şeffaf ve ekonomik fiyatlarla taksi hizmeti.</p>
-        </div>
+          <h3>Uygun ve Ekonomik Fiyatlandırma</h3>
+          <p>Şeffaf ve ekonomik fiyatlarla taksi hizmeti. Mesafeye göre sabit ve adil ücretlendirme. Bütçenizi düşünen, gizli ücret olmayan taksi hizmeti sunuyoruz.</p>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="cta-section">
-      <h2>Hemen Taksi Çağırın</h2>
-      <p>Şırnak, Cizre ve tüm ilçelerde hızlı ve güvenilir taksi için hemen arayın.</p>
+    <section class="cta-section" aria-label="Çağrı to action">
+      <h2>Hemen Şırnak Merkez 7/24 Ekonomi Taksi Çağırın</h2>
+      <p>Şırnak Merkez'de hızlı, güvenilir ve ekonomik taksi için hemen arayın. 7/24 hizmetinizdeyiz. Yeni Mahalle Dilan Sokak'taki ofisimizden size en yakın taksiyi yönlendirelim.</p>
       <a href="tel:+905364973773" class="cta-button" aria-label="0536 497 37 73 numaralı telefonu ara">
         <font-awesome-icon :icon="['fas', 'phone']" /> 0536 497 37 73
       </a>
-    </div>
-  </div>
+    </section>
+
+    <section class="faq" aria-label="Sık sorulan sorular">
+      <h2>Sık Sorulan Sorular</h2>
+      <div class="faq-grid">
+        <article class="faq-item">
+          <h3>Şırnak Merkez'de taksi nasıl çağırabilirim?</h3>
+          <p>0536 497 37 73 numaralı telefonu arayarak veya WhatsApp üzerinden mesaj göndererek taksi çağırabilirsiniz. Konumunuzu paylaşmanız yeterli.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Taksi hizmeti hangi saatlerde mevcut?</h3>
+          <p>7/24 kesintisiz taksi hizmeti sunuyoruz. Gece yarısı da olsa, sabahın ilk ışıkları da, her zaman hizmetinizdeyiz.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Ödeme yöntemleri nelerdir?</h3>
+          <p>Nakit ve kredi kartı ile ödeme yapabilirsiniz. Tüm ödemeler şeffaf ve fiyat listesine göre yapılmaktadır.</p>
+        </article>
+      </div>
+    </section>
+  </main>
 </template>
 
 <style scoped>
@@ -112,10 +131,12 @@ const areas = [
   text-align: center;
   padding: 48px 20px 40px 20px;
   background: linear-gradient(135deg, #FFD600 0%, #1A237E 100%);
-  color: #1A237E;
+  color: #fff;
   border-radius: 22px;
   margin-bottom: 40px;
   box-shadow: 0 4px 24px #FFD60022;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
@@ -123,17 +144,23 @@ const areas = [
   font-weight: 800;
   margin-bottom: 18px;
   letter-spacing: -1px;
-  color: #1A237E;
+  color: #fff;
+  position: relative;
+  z-index: 2;
 }
 
 .subtitle {
   font-size: 1.3em;
   margin-bottom: 28px;
-  color: #222;
+  color: #f0f0f0;
+  position: relative;
+  z-index: 2;
 }
 
 .phone-number {
   margin-top: 30px;
+  position: relative;
+  z-index: 2;
 }
 
 .call-button {
@@ -157,6 +184,19 @@ const areas = [
   color: #FFD600;
   border-color: #FFD600;
   transform: scale(1.05);
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 18px;
+  margin-top: 30px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  border: 4px solid #fff;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
 }
 
 .service-areas {
@@ -254,17 +294,45 @@ const areas = [
 }
 
 .feature-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 14px;
+  background: #FFF9E1;
+  color: #1A237E;
+  padding: 32px 22px 28px 22px;
+  border-radius: 18px;
   text-align: center;
-  box-shadow: 0 2px 8px #FFD60011;
+  box-shadow: 0 4px 24px #FFD60033;
+  transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
+  border: 2px solid #FFE082;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 160px;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px #FFD60055;
+  border-color: #FFD600;
 }
 
 .feature-card svg {
   font-size: 2.5em;
-  color: #FFD600;
+  color: #1A237E;
   margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  color: #1A237E;
+  margin-bottom: 10px;
+  font-size: 1.25em;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.feature-card p {
+  color: #333;
+  margin-bottom: 0;
+  font-size: 1.08em;
+  font-weight: 500;
 }
 
 .cta-section {
@@ -272,7 +340,7 @@ const areas = [
   padding: 48px 20px;
   background: linear-gradient(135deg, #FFD600 0%, #1A237E 100%);
   border-radius: 18px;
-  color: #1A237E;
+  color: #fff;
   margin-top: 40px;
   box-shadow: 0 4px 24px #FFD60022;
 }
@@ -301,6 +369,13 @@ const areas = [
   transform: scale(1.05);
 }
 
+.neighborhoods {
+  font-size: 0.9em;
+  color: #1A237E;
+  margin-top: 8px;
+  font-style: italic;
+}
+
 @media (max-width: 1024px) {
   .areas-grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -325,5 +400,52 @@ const areas = [
     padding: 22px 10px 18px 10px;
     min-height: 120px;
   }
+  .hero-image {
+    margin-top: 20px;
+  }
+}
+
+.faq {
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1A237E;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #F7F8FA;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #E0E0E0;
+}
+
+.faq-item h3 {
+  color: #1A237E;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.faq-item p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.05em;
 }
 </style>
